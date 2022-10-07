@@ -1,0 +1,7 @@
+%h1 エントリー編集
+
+= render "form", blog: @blog, entry: @entry
+
+%br
+%div
+  = link_to "Back to entrier", blog_entry_path(@blog, @entry)

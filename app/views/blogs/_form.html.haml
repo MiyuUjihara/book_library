@@ -1,0 +1,11 @@
+= simple_form_for @blog do |form|
+  - if blog.errors.any?
+    %div{style: "color:red"}
+      %p  タイトルを入力してください
+      %ul
+        - blog.errors.each do |error|
+          %li= error.full_message
+  %div
+    = form.text_area :title, placeholder: 'タイトルを入力'
+  %div
+    = form.submit

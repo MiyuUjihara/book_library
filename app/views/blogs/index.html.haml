@@ -1,0 +1,30 @@
+%h4 すべてのBlogを表示
+= link_to "CSVダウンロード", blogs_path(format: :csv)
+- @blogs_all.each do |blog|
+  %p
+    = blog.id
+    = blog.title
+    = link_to "詳細", blog_path(blog)
+
+%h4 Blogのid:1に紐づくすべてのCommentを表示
+- @comments.each do |comment|
+  %p
+    = comment.id
+    = comment.body
+    = comment.status
+%br
+
+%h4 まだEntryを書いていないBlogを表示
+- @blogs.each do |blog|
+  %p
+    = blog.id
+    = blog.title
+%br
+
+%h4 statusがunapprovedであるCommentがあるEntryのあるBlogを表示
+- @blogs_2.each do |blog|
+  %p
+    = blog.id
+    = blog.title
+
+= link_to  "new blog", new_blog_path

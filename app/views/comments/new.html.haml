@@ -1,0 +1,8 @@
+%h1 New comment
+
+= render "form", blog: @blog, entry: @entry, comment: @comment
+
+%br
+
+%div
+  = link_to "Back to blogs", blogs_path

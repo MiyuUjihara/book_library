@@ -1,0 +1,9 @@
+%p 新しいコメントが登録されました。
+
+%p 承認または削除してください。
+
+%p= "Blog: #{@blog.title}"
+%p= "Entry: #{@entry.title}"
+%p= "Comment: #{@comment.body}"
+%br
+%p= "URL: http://#{default_url_options[:host]}:#{default_url_options[:port]}/blogs/#{@blog.id}/entries/#{@entry.id}}"

@@ -1,0 +1,10 @@
+= render @entry
+= render "entry_comments", comments: @comments
+
+%br
+%div
+  = link_to "コメントを書く", new_blog_entry_comment_path(@blog, @entry.id)
+%div
+  = link_to "エントリー一覧", blog_entries_path(@blog, @entry)
+%div
+  = link_to "コメント一覧", blog_entry_comments_path(@blog, @entry)

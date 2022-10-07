@@ -1,0 +1,10 @@
+%p
+  %strong Title:
+  = entry.title
+
+%p
+  %strong Body:
+  = entry.body
+%div
+  = link_to " 編集", edit_blog_entry_path(@entry)
+

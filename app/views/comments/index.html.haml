@@ -1,0 +1,15 @@
+-@comments.each do |comment|
+  %p
+    = comment.id
+    = comment.body
+    = comment.status
+  %p
+    - if comment.status == "approved"
+      = button_to "unapproved", unapproved_blog_entry_comment_path(@blog, @entry, comment), method: :patch
+    - else
+      = button_to "approved", approved_blog_entry_comment_path(@blog, @entry, comment), method: :patch
+    = link_to "編集", edit_blog_entry_comment_path(@blog, @entry, comment)
+    = button_to "削除", blog_entry_comment_path(@blog, @entry, comment ), method: :delete
+
+= link_to "entry一覧", blog_entries_path(@blog)
+= link_to  "コメントを書く", new_blog_entry_comment_path(@blog, @entry)

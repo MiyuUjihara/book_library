@@ -1,0 +1,12 @@
+%h4 blog_id: #{@blog.id}に関連するentryを表示
+- @entries.each do |entry|
+  %p
+    = entry.id
+    = entry.title
+  %span
+    = link_to "詳細", blog_entry_path(@blog, entry)
+    = button_to "削除", blog_entry_path(@blog, entry), method: :delete
+= render "entry_comments", comments: @comments
+
+= link_to "ブログ詳細に戻る", blog_path(@blog)
+= link_to "new entry", new_blog_entry_path(@blog)

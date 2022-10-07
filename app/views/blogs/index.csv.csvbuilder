@@ -1,0 +1,5 @@
+csv << ['ID', 'Title', 'Body']
+
+@entries.each do |entry|
+  csv << [entry.id, entry.title, entry.body]
+end

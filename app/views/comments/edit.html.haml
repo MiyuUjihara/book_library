@@ -1,0 +1,7 @@
+%h1 コメント編集
+
+= render "form", blog: @blog, entry: @entry, comment: @comment
+
+%br
+%div
+  = link_to "comment一覧に戻る", blog_entry_comments_path(@blog, @entry)
